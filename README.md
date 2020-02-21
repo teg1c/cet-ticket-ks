@@ -16,3 +16,7 @@ $ cd cet-ticket-ks && composer update
 如果使用问题请联系我
 
 Email:`teg1c@foxmail.com`
+
+## 全国版本
+
+https://github.com/teg1c/cet-ticket-bm
