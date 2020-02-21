@@ -6,7 +6,7 @@
 ## 使用方法
 
 ```
-$ git clone git@github.com:teg1c/cet-ticket-ks.git
+$ git clone https://github.com/teg1c/cet-ticket-ks.git
 
 $ cd cet-ticket-ks && composer update
 
