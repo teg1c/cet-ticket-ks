@@ -1,6 +1,7 @@
 <?php
 require_once './vendor/autoload.php';
 require_once './common.php';
+require_once './exception/AppError.php';
 $act = isset($_GET['act']) && !empty($_GET['act']) ? $_GET['act'] : 'login';
 $http = new \tegic\Http();
 
@@ -20,7 +21,9 @@ if ($act == 'login') {
     $result = $http->connect("http://cet-ks.neea.edu.cn/cetset/rdcode.bmp");
     echo $result;
 } elseif ($act == 'query') {
-
+    if (!$_POST) {
+        throw new AppError('Permission denied');
+    }
     $data = [
         'ks_sfz' => $_POST['num'],
         'ks_xm' => iconv("UTF-8", "gbk//TRANSLIT", $_POST['username']),
